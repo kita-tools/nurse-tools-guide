@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>点滴計算をわかりやすく解説｜看護師・看護学生向け</title>
+
+  <meta
+    name="description"
+    content="看護師・看護学生向けに、点滴計算をわかりやすく解説。mL/hr、滴/分、投与時間の計算方法を例題と計算機で学べます。"
+  >
+
+  <link rel="stylesheet" href="nursing-guide.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       ヘッダー
+  ========================== -->
+
+  <header>
+    <h1>点滴計算をわかりやすく解説</h1>
+
+    <p>
+      「何を計算するの？」「どう計算するの？」を
+      わかりやすく解説
+    </p>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         学習用注意
+    ========================== -->
+
+    <div class="warning">
+
+      <strong>⚠ 学習用ページ</strong>
+
+      <p>
+        このページは点滴計算を学習するための教材です。
+        実際の医療行為では、医師の指示、輸液製品、
+        輸液セットの規格、施設の手順などを必ず確認してください。
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         イントロ
+    ========================== -->
+
+    <section class="card">
+
+      <h2>点滴計算では何を求めるの？</h2>
+
+      <p>
+        点滴計算では、問題によって求めるものが違います。
+      </p>
+
+      <p>
+        まずは、
+        <strong>「何を求める問題なのか」</strong>
+        を確認することが大切です。
+      </p>
+
+      <div class="point">
+
+        <strong>代表的な3つの計算</strong>
+
+        <ul>
+          <li>1時間あたりの輸液量（mL/hr）</li>
+          <li>1分間あたりの滴下数（滴/分）</li>
+          <li>輸液が終了するまでの時間</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         メニュー
+    ========================== -->
+
+    <section class="card" id="menu">
+
+      <h2>点滴計算メニュー</h2>
+
+      <p>
+        知りたい計算を選んでください。
+      </p>
+
+
+      <a href="#rate" class="menu-item">
+
+        <div class="menu-title">
+          ① mL/hrを求める
+        </div>
+
+        <div class="menu-use">
+          1時間あたり何mL投与するか
+        </div>
+
+        <div class="menu-link">
+          計算方法を見る →
+        </div>
+
+      </a>
+
+
+      <a href="#drops" class="menu-item">
+
+        <div class="menu-title">
+          ② 滴/分を求める
+        </div>
+
+        <div class="menu-use">
+          1分間に何滴落とすか
+        </div>
+
+        <div class="menu-link">
+          計算方法を見る →
+        </div>
+
+      </a>
+
+
+      <a href="#time" class="menu-item">
+
+        <div class="menu-title">
+          ③ 投与時間を求める
+        </div>
+
+        <div class="menu-use">
+          輸液が終了するまで何時間かかるか
+        </div>
+
+        <div class="menu-link">
+          計算方法を見る →
+        </div>
+
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         ① mL/hr
+    ========================== -->
+
+    <section class="card" id="rate">
+
+      <h2>
+        ① 1時間あたりの輸液量（mL/hr）を求める
+      </h2>
+
+      <div class="point">
+
+        <strong>こんなときに使う</strong>
+
+        <p>
+          輸液ポンプなどで、
+          1時間あたり何mL投与するかを求めるときに使います。
+        </p>
+
+      </div>
+
+
+      <h3>何を求めるの？</h3>
+
+      <p>
+        輸液を
+        <strong>1時間あたり何mL投与するか</strong>
+        を求めます。
+      </p>
+
+      <p>
+        単位は <strong>mL/hr</strong> です。
+      </p>
+
+
+      <h3>計算式</h3>
+
+      <div class="formula">
+        輸液速度（mL/hr）
+        ＝ 輸液量（mL）÷ 投与時間（hr）
+      </div>
+
+
+      <h3>例題</h3>
+
+      <div class="example">
+
+        <strong>
+          500mLの輸液を5時間で投与する場合
+        </strong>
+
+        <p>
+          500 ÷ 5
+        </p>
+
+        <p>
+          ＝ <strong>100mL/hr</strong>
+        </p>
+
+        <p>
+          答えは、
+          <strong>100mL/hr</strong>です。
+        </p>
+
+      </div>
+
+
+      <div class="calculator">
+
+        <h3>計算してみよう</h3>
+
+        <div class="form-row">
+
+          <div>
+
+            <label for="volume1">
+              輸液量（mL）
+            </label>
+
+            <input
+              id="volume1"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="例：500"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label for="hours1">
+              投与時間（時間）
+            </label>
+
+            <input
+              id="hours1"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="例：5"
+            >
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          onclick="calcRate()"
+        >
+          計算する
+        </button>
+
+
+        <div
+          id="result1"
+          class="result"
+          hidden
+        ></div>
+
+      </div>
+
+
+      <a href="#menu" class="back">
+        ↑ 点滴計算メニューに戻る
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         ② 滴/分
+    ========================== -->
+
+    <section class="card" id="drops">
+
+      <h2>
+        ② 1分間あたりの滴下数（滴/分）を求める
+      </h2>
+
+      <div class="point">
+
+        <strong>こんなときに使う</strong>
+
+        <p>
+          輸液ポンプを使用せず、
+          手動で滴下を調節するときなどに使います。
+        </p>
+
+      </div>
+
+
+      <h3>何を求めるの？</h3>
+
+      <p>
+        点滴筒を見ながら、
+        <strong>1分間に何滴落とすか</strong>
+        を求めます。
+      </p>
+
+      <p>
+        単位は <strong>滴/分</strong> です。
+      </p>
+
+
+      <h3>計算式</h3>
+
+      <div class="formula">
+
+        滴下数（滴/分）
+        ＝ 輸液量（mL）
+        × 滴下係数（滴/mL）
+        ÷ 投与時間（分）
+
+      </div>
+
+
+      <h3>まず時間を「分」に直す</h3>
+
+      <div class="example">
+
+        <p>
+          5時間の場合
+        </p>
+
+        <p>
+          5 × 60
+          ＝ <strong>300分</strong>
+        </p>
+
+      </div>
+
+
+      <h3>例題</h3>
+
+      <div class="example">
+
+        <strong>
+          500mLの輸液を5時間で投与する。
+          滴下係数は20滴/mLとする。
+        </strong>
+
+        <p>
+          まず5時間を分に変換します。
+        </p>
+
+        <p>
+          5 × 60
+          ＝ 300分
+        </p>
+
+        <p>
+          次に、
+        </p>
+
+        <p>
+          500 × 20 ÷ 300
+        </p>
+
+        <p>
+          ＝ 約<strong>33.3滴/分</strong>
+        </p>
+
+      </div>
+
+
+      <div class="important">
+
+        <strong>滴下係数に注意</strong>
+
+        <p>
+          滴下係数は輸液セットによって異なります。
+        </p>
+
+        <p>
+          「20滴/mL」「60滴/mL」など、
+          <strong>実際に使用する輸液セットの表示を確認してください。</strong>
+        </p>
+
+      </div>
+
+
+      <h3>「何秒に1滴？」に換算する</h3>
+
+      <div class="point">
+
+        <p>
+          滴下数をイメージするとき、
+          「何秒に1滴か」に換算することもできます。
+        </p>
+
+        <p>
+          例えば30滴/分なら、
+        </p>
+
+        <p>
+          60秒 ÷ 30滴
+          ＝ <strong>2秒に1滴</strong>
+        </p>
+
+      </div>
+
+
+      <div class="calculator">
+
+        <h3>計算してみよう</h3>
+
+
+        <div class="form-row">
+
+          <div>
+
+            <label for="volume2">
+              輸液量（mL）
+            </label>
+
+            <input
+              id="volume2"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="例：500"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label for="time2">
+              投与時間（分）
+            </label>
+
+            <input
+              id="time2"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="例：300"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div>
+
+            <label for="dropFactor">
+              滴下係数（滴/mL）
+            </label>
+
+            <select id="dropFactor">
+
+              <option value="20">
+                20滴/mL
+              </option>
+
+              <option value="60">
+                60滴/mL
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          onclick="calcDrops()"
+        >
+          計算する
+        </button>
+
+
+        <div
+          id="result2"
+          class="result"
+          hidden
+        ></div>
+
+      </div>
+
+
+      <a href="#menu" class="back">
+        ↑ 点滴計算メニューに戻る
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         ③ 投与時間
+    ========================== -->
+
+    <section class="card" id="time">
+
+      <h2>
+        ③ 投与にかかる時間を求める
+      </h2>
+
+      <div class="point">
+
+        <strong>こんなときに使う</strong>
+
+        <p>
+          輸液量と投与速度から、
+          輸液が終了するまでの時間を確認するときに使います。
+        </p>
+
+      </div>
+
+
+      <h3>何を求めるの？</h3>
+
+      <p>
+        輸液量と輸液速度から、
+        <strong>投与に何時間かかるか</strong>
+        を求めます。
+      </p>
+
+
+      <h3>計算式</h3>
+
+      <div class="formula">
+
+        投与時間（hr）
+        ＝ 輸液量（mL）
+        ÷ 輸液速度（mL/hr）
+
+      </div>
+
+
+      <h3>例題</h3>
+
+      <div class="example">
+
+        <strong>
+          500mLの輸液を100mL/hrで投与する場合
+        </strong>
+
+        <p>
+          500 ÷ 100
+        </p>
+
+        <p>
+          ＝ <strong>5時間</strong>
+        </p>
+
+      </div>
+
+
+      <div class="calculator">
+
+        <h3>計算してみよう</h3>
+
+
+        <div class="form-row">
+
+          <div>
+
+            <label for="volume3">
+              輸液量（mL）
+            </label>
+
+            <input
+              id="volume3"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="例：500"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label for="rate3">
+              輸液速度（mL/hr）
+            </label>
+
+            <input
+              id="rate3"
+              type="number"
+              min="0"
+              step="any"
+              placeholder="例：100"
+            >
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          onclick="calcTime()"
+        >
+          計算する
+        </button>
+
+
+        <div
+          id="result3"
+          class="result"
+          hidden
+        ></div>
+
+      </div>
+
+
+      <a href="#menu" class="back">
+        ↑ 点滴計算メニューに戻る
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         まとめ
+    ========================== -->
+
+    <section class="card">
+
+      <h2>点滴計算のまとめ</h2>
+
+      <div class="point">
+
+        <strong>① mL/hr</strong>
+
+        <p>
+          1時間あたり何mL投与するか
+        </p>
+
+      </div>
+
+
+      <div class="point">
+
+        <strong>② 滴/分</strong>
+
+        <p>
+          1分間に何滴落とすか
+        </p>
+
+      </div>
+
+
+      <div class="point">
+
+        <strong>③ 投与時間</strong>
+
+        <p>
+          輸液が終了するまで何時間かかるか
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         看護ツールへの自然な導線
+    ========================== -->
+
+    <section class="card tool-promotion">
+
+      <h2>
+        おすすめの看護ツールを使ってみる
+      </h2>
+
+      <p>
+        点滴計算以外にも、
+        看護師・看護学生の勉強や業務に役立つ
+        便利なツールをまとめています。
+      </p>
+
+      <a
+        href="https://kita-tools.github.io/nurse-tools/"
+        class="tool-promotion-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        看護ツールを見る →
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         最終注意
+    ========================== -->
+
+    <div class="warning">
+
+      <strong>⚠ 実際の医療行為では必ず確認してください</strong>
+
+      <p>
+        このページの計算機は学習目的です。
+        実際の患者さんへの投与量・投与速度・滴下数を決定する際は、
+        必ず医師の指示、薬剤・輸液製品、
+        輸液セットの規格、施設の手順などを確認してください。
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       フッター
+  ========================== -->
+
+  <footer>
+
+    <p>
+      点滴計算 学習用ページ
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       右下：看護ツール紹介
+  ========================== -->
+
+  <div
+    class="floating-tool"
+    id="floatingTool"
+    aria-label="看護師向けツールの紹介"
+  >
+
+    <div class="floating-tool-header">
+
+      <div class="floating-tool-title">
+        👩‍⚕️ 看護師向けツール
+      </div>
+
+      <button
+        type="button"
+        class="floating-tool-close"
+        onclick="closeFloatingTool()"
+        aria-label="閉じる"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <p>
+      勉強や看護業務に使える
+      便利なツールをまとめています。
+    </p>
+
+
+    <a
+      href="https://kita-tools.github.io/nurse-tools/"
+      class="floating-tool-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      看護ツールを見る →
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       JavaScript
+  ========================== -->
+<script>
+
+/* =========================================================
+   点滴計算 学習ページ JavaScript 
+   ========================================================= */
+
+
+/* =========================================================
+   1. 入力値チェック 
+   ========================================================= */
+
+function getPositiveNumber(id) {
+
+  const element =
+    document.getElementById(id);
+
+  const value =
+    Number(element.value);
+
+  if (
+    !Number.isFinite(value) ||
+    value <= 0
+  ) {
+    return null;
+  }
+
+  return value;
+}
+
+
+/* =========================================================
+   2. mL/hr計算 
+   ========================================================= */
+
+function calcRate() {
+
+  const volume =
+    getPositiveNumber("volume1");
+
+  const hours =
+    getPositiveNumber("hours1");
+
+  const result =
+    document.getElementById("result1");
+
+
+  if (
+    volume === null ||
+    hours === null
+  ) {
+
+    result.hidden = false;
+
+    result.textContent =
+      "輸液量と投与時間を正しく入力してください。";
+
+    return;
+  }
+
+
+  const rate =
+    volume / hours;
+
+
+  result.hidden = false;
+
+  result.innerHTML =
+    `答え：<strong>${rate.toFixed(1)} mL/hr</strong>`;
+}
+
+
+/* =========================================================
+   3. 滴/分計算 
+   ========================================================= */
+
+function calcDrops() {
+
+  const volume =
+    getPositiveNumber("volume2");
+
+  const time =
+    getPositiveNumber("time2");
+
+  const dropFactor =
+    Number(
+      document.getElementById("dropFactor").value
+    );
+
+  const result =
+    document.getElementById("result2");
+
+
+  if (
+    volume === null ||
+    time === null ||
+    !Number.isFinite(dropFactor) ||
+    dropFactor <= 0
+  ) {
+
+    result.hidden = false;
+
+    result.textContent =
+      "輸液量・投与時間・滴下係数を正しく確認してください。";
+
+    return;
+  }
+
+
+  const drops =
+    (volume * dropFactor) / time;
+
+
+  const secondsPerDrop =
+    60 / drops;
+
+
+  result.hidden = false;
+
+  result.innerHTML =
+    `答え：<strong>${drops.toFixed(1)} 滴/分</strong>
+    <br>
+    目安：約<strong>${secondsPerDrop.toFixed(1)}秒に1滴</strong>`;
+}
+
+
+/* =========================================================
+   4. 投与時間計算 
+   ========================================================= */
+
+function calcTime() {
+
+  const volume =
+    getPositiveNumber("volume3");
+
+  const rate =
+    getPositiveNumber("rate3");
+
+  const result =
+    document.getElementById("result3");
+
+
+  if (
+    volume === null ||
+    rate === null
+  ) {
+
+    result.hidden = false;
+
+    result.textContent =
+      "輸液量と輸液速度を正しく入力してください。";
+
+    return;
+  }
+
+
+  const hours =
+    volume / rate;
+
+
+  /*
+   * 分単位に変換してから丸めることで、
+   * 「○時間60分」の表示を防ぐ
+   */
+
+  const totalMinutes =
+    Math.round(hours * 60);
+
+
+  const wholeHours =
+    Math.floor(totalMinutes / 60);
+
+
+  const minutes =
+    totalMinutes % 60;
+
+
+  result.hidden = false;
+
+  result.innerHTML =
+    `答え：<strong>${hours.toFixed(2)}時間</strong>
+    <br>
+    約<strong>${wholeHours}時間${minutes}分</strong>`;
+}
+
+</script>
+
+<script src="nursing-guide.js"></script>
+
+</body>
+
+</html>

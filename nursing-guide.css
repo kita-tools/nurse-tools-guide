@@ -1,0 +1,926 @@
+@charset "UTF-8";
+
+/* =========================================================
+   点滴計算 学習ページ
+   共通CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. 基本設定
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    YuGothic,
+    Meiryo,
+    sans-serif;
+
+  background: #f4f8fb;
+  color: #263238;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   2. ヘッダー
+   ========================================================= */
+
+header {
+  background:
+    linear-gradient(
+      135deg,
+      #1976d2,
+      #42a5f5
+    );
+
+  color: #fff;
+
+  padding: 36px 20px;
+
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+header p {
+  margin: 0;
+
+  font-size: 15px;
+
+  opacity: 0.95;
+}
+
+
+/* =========================================================
+   3. メインコンテンツ
+   ========================================================= */
+
+main {
+  max-width: 900px;
+
+  margin: 30px auto;
+
+  padding:
+    0
+    16px
+    70px;
+}
+
+
+/* =========================================================
+   4. カード
+   ========================================================= */
+
+.card {
+  background: #fff;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 3px 14px
+    rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   5. 見出し
+   ========================================================= */
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  color: #1565c0;
+
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+h3 {
+  margin-top: 28px;
+  margin-bottom: 10px;
+
+  color: #37474f;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   6. 注意・警告
+   ========================================================= */
+
+.warning {
+  background: #fff8e1;
+
+  border-left:
+    5px solid
+    #ffb300;
+
+  padding: 16px 18px;
+
+  border-radius: 8px;
+
+  margin-bottom: 25px;
+}
+
+.warning strong {
+  color: #795548;
+}
+
+.warning p {
+  margin:
+    6px 0 0;
+}
+
+
+/* =========================================================
+   7. 重要ポイント
+   ========================================================= */
+
+.point {
+  background: #e8f5e9;
+
+  border-left:
+    5px solid
+    #43a047;
+
+  padding: 15px;
+
+  border-radius: 7px;
+
+  margin-top: 15px;
+}
+
+.point p:last-child {
+  margin-bottom: 0;
+}
+
+.point ul {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   8. 重要事項
+   ========================================================= */
+
+.important {
+  background: #ffebee;
+
+  border-left:
+    5px solid
+    #e53935;
+
+  padding: 15px;
+
+  border-radius: 7px;
+
+  margin-top: 18px;
+}
+
+.important strong {
+  color: #c62828;
+}
+
+
+/* =========================================================
+   9. メニュー
+   ========================================================= */
+
+.menu-item {
+  display: block;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  background: #f8fbff;
+
+  border:
+    1px solid
+    #d9e8f5;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin: 14px 0;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  background: #eef7ff;
+
+  border-color: #90caf9;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 4px 12px
+    rgba(25, 118, 210, 0.08);
+}
+
+.menu-title {
+  color: #1565c0;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+.menu-use {
+  margin-top: 5px;
+
+  color: #455a64;
+
+  font-size: 14px;
+}
+
+.menu-link {
+  display: inline-block;
+
+  margin-top: 10px;
+
+  color: #1976d2;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   10. 計算式
+   ========================================================= */
+
+.formula {
+  background: #eef6ff;
+
+  border-left:
+    5px solid
+    #42a5f5;
+
+  padding: 15px;
+
+  border-radius: 7px;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 16px;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   11. 例題
+   ========================================================= */
+
+.example {
+  background: #fafafa;
+
+  border:
+    1px solid
+    #e3e7ea;
+
+  padding: 16px;
+
+  border-radius: 8px;
+
+  margin-top: 15px;
+}
+
+.example p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   12. 計算フォーム
+   ========================================================= */
+
+.calculator {
+  background: #f8fafc;
+
+  border:
+    1px solid
+    #e0e6eb;
+
+  border-radius: 10px;
+
+  padding: 20px;
+
+  margin-top: 22px;
+}
+
+.calculator h3 {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   13. フォームレイアウト
+   ========================================================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   14. ラベル
+   ========================================================= */
+
+label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-weight: bold;
+
+  color: #37474f;
+}
+
+
+/* =========================================================
+   15. 入力欄
+   ========================================================= */
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  color: #263238;
+
+  background: #fff;
+
+  border:
+    1px solid
+    #b8c4cc;
+
+  border-radius: 7px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #42a5f5;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(66, 165, 245, 0.15);
+}
+
+
+/* =========================================================
+   16. ボタン
+   ========================================================= */
+
+button {
+  border: 0;
+
+  border-radius: 7px;
+
+  padding: 12px 20px;
+
+  background: #1976d2;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  background: #1565c0;
+
+  transform:
+    translateY(-1px);
+}
+
+button:active {
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   17. 計算結果
+   ========================================================= */
+
+.result {
+  margin-top: 15px;
+
+  background: #e8f5e9;
+
+  border-left:
+    5px solid
+    #43a047;
+
+  border-radius: 7px;
+
+  padding: 15px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   18. 戻るリンク
+   ========================================================= */
+
+.back {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  color: #1976d2;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   19. ページ内 看護ツール紹介
+   ========================================================= */
+
+.tool-promotion {
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff,
+      #eef7ff
+    );
+
+  border:
+    1px solid
+    #cfe3f5;
+
+  text-align: center;
+}
+
+.tool-promotion h2 {
+  margin-bottom: 10px;
+}
+
+.tool-promotion p {
+  max-width: 600px;
+
+  margin:
+    0 auto 18px;
+
+  color: #455a64;
+}
+
+
+/* CTAボタン */
+
+.tool-promotion-button {
+  display: inline-block;
+
+  background: #1976d2;
+
+  color: #fff;
+
+  padding:
+    11px 22px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 3px 8px
+    rgba(25, 118, 210, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tool-promotion-button:hover {
+  background: #1565c0;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 5px 12px
+    rgba(25, 118, 210, 0.25);
+}
+
+
+/* =========================================================
+   20. フッター
+   ========================================================= */
+
+footer {
+  text-align: center;
+
+  color: #607d8b;
+
+  font-size: 13px;
+
+  padding: 20px;
+}
+
+
+/* =========================================================
+   21. 看護ツール紹介ポップアップ
+   ========================================================= */
+
+.floating-tool {
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 310px;
+
+  background: #fff;
+
+  border:
+    1px solid
+    #d9e8f5;
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.18);
+
+  z-index: 1000;
+
+  /*
+   * JSで表示・非表示を切り替える
+   */
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* JSで .is-visible を付けたとき */
+
+.floating-tool.is-visible {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   ポップアップ上部
+   --------------------------------------------------------- */
+
+.floating-tool-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+
+/* タイトル */
+
+.floating-tool-title {
+  color: #1565c0;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   閉じるボタン
+   --------------------------------------------------------- */
+
+.floating-tool-close {
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  background: #f1f5f8;
+
+  color: #607d8b;
+
+  font-size: 19px;
+
+  line-height: 30px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.floating-tool-close:hover {
+  background: #e3ebf0;
+
+  color: #37474f;
+
+  transform: none;
+}
+
+
+/* ---------------------------------------------------------
+   ポップアップ本文
+   --------------------------------------------------------- */
+
+.floating-tool p {
+  margin:
+    0 0 14px;
+
+  color: #455a64;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   ポップアップCTA
+   --------------------------------------------------------- */
+
+.floating-tool-button {
+  display: block;
+
+  width: 100%;
+
+  padding:
+    10px 14px;
+
+  background: #1976d2;
+
+  color: #fff;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 3px 8px
+    rgba(25, 118, 210, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.floating-tool-button:hover {
+  background: #1565c0;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 5px 12px
+    rgba(25, 118, 210, 0.23);
+}
+
+
+/* =========================================================
+   22. スマホ対応
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  header {
+    padding:
+      30px 16px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+
+  main {
+    margin-top: 20px;
+
+    padding:
+      0
+      12px
+      50px;
+  }
+
+
+  .card {
+    padding: 18px;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+  }
+
+
+  h2 {
+    font-size: 21px;
+  }
+
+
+  h3 {
+    font-size: 17px;
+  }
+
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+
+  .calculator {
+    padding: 16px;
+  }
+
+
+  .formula {
+    font-size: 14px;
+
+    padding: 13px;
+  }
+
+
+  .menu-title {
+    font-size: 17px;
+  }
+
+
+  /* --------------------------------
+     ポップアップ
+  -------------------------------- */
+
+  .floating-tool {
+    left: 12px;
+    right: 12px;
+
+    bottom: 12px;
+
+    width: auto;
+
+    padding: 15px;
+
+    border-radius: 13px;
+  }
+
+
+  .floating-tool-title {
+    font-size: 15px;
+  }
+
+
+  .floating-tool p {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .floating-tool-button {
+    padding: 10px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   23. 動きを減らす設定への対応
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+}

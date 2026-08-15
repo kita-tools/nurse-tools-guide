@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>酸素ボンベ計算解説</title>
+
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="nursing-guide.css">
+</head>
+
+<body>
+
+<header>
+  <h1>酸素ボンベ計算をわかりやすく解説</h1>
+  <p>「あと何分使える？」を計算してみよう</p>
+</header>
+
+<main>
+
+  <!-- 注意事項 -->
+  <div class="warning">
+    <strong>⚠ 学習用ページ</strong><br>
+    このページは酸素ボンベの計算方法を学習するための教材です。
+    実際の酸素投与・患者搬送では、使用するボンベや流量調整器の仕様、
+    医師の指示、施設の手順などを必ず確認してください。
+  </div>
+
+
+  <!-- =====================================================
+       メニュー
+  ====================================================== -->
+
+  <section class="card" id="menu">
+
+    <h2>酸素ボンベ計算で求めるもの</h2>
+
+    <p>
+      酸素ボンベの計算では、
+      「ボンベにどれくらい酸素が残っているか」
+      「あとどれくらい使えるか」を考えます。
+    </p>
+
+
+    <a href="#remaining" class="menu-item">
+
+      <div class="menu-title">
+        ① 酸素ボンベがあと何分使えるかを求める
+      </div>
+
+      <div class="menu-use">
+        → 患者搬送などで、現在の酸素残量でどれくらい使用できるか確認するときに使用
+      </div>
+
+      <div class="menu-link">
+        詳しい解説を見る →
+      </div>
+
+    </a>
+
+
+    <a href="#amount" class="menu-item">
+
+      <div class="menu-title">
+        ② 酸素ボンベに残っている酸素量を求める
+      </div>
+
+      <div class="menu-use">
+        → 残圧から、残っている酸素量を考えるときに使用
+      </div>
+
+      <div class="menu-link">
+        詳しい解説を見る →
+      </div>
+
+    </a>
+
+
+    <a href="#check" class="menu-item">
+
+      <div class="menu-title">
+        ③ 必要な時間に対して酸素が足りるか確認する
+      </div>
+
+      <div class="menu-use">
+        → 搬送・検査などに必要な時間と、ボンベの使用可能時間を比較するときに使用
+      </div>
+
+      <div class="menu-link">
+        詳しい解説を見る →
+      </div>
+
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       ① 使用可能時間
+  ====================================================== -->
+
+  <section class="card" id="remaining">
+
+    <h2>
+      ① 酸素ボンベがあと何分使えるかを求める
+    </h2>
+
+    <div class="point">
+      <strong>主な使用場面</strong><br>
+      → 患者搬送や検査などで、現在の酸素残量でどれくらい使用できるか確認するときに使用します。
+    </div>
+
+
+    <h3>何を求めるの？</h3>
+
+    <p>
+      酸素ボンベの残圧と酸素流量から、
+      <strong>あと何分酸素を使用できるか</strong>
+      を求めます。
+    </p>
+
+    <p>
+      答えの単位は <strong>分</strong> です。
+    </p>
+
+
+    <h3>基本の考え方</h3>
+
+    <p>
+      酸素ボンベの中には、圧縮された酸素が入っています。
+      ボンベ内の圧力が高いほど、残っている酸素量も多くなります。
+    </p>
+
+
+    <h3>「×10」は何を意味するの？</h3>
+
+    <div class="important">
+
+      <p>
+        酸素ボンベの圧力は「MPa」で表示されます。
+      </p>
+
+      <p>
+        <strong>1MPa＝約10気圧です。</strong>
+      </p>
+
+      <p>
+        酸素量を計算するときは、
+        <strong>1気圧を基準として酸素量を換算する</strong>
+        ため、「×10」をして単位を調整して計算します。
+      </p>
+
+      <p>
+        そのため、簡便な計算では
+        <strong>ボンベ容積 × 残圧 × 10</strong>
+        として残存酸素量を求めます。
+      </p>
+
+    </div>
+
+
+    <h3>計算式</h3>
+
+    <div class="formula">
+      使用可能時間（分）<br>
+      ＝ ボンベ容積（L）× 残圧（MPa）× 10<br>
+      ÷ 酸素流量（L/分）
+    </div>
+
+    <p>
+      厚生労働省の資料でも、
+      酸素ボンベの使用可能時間についてこの換算式が示されています。
+    </p>
+
+
+    <h3>例題</h3>
+
+    <div class="example">
+
+      <strong>
+        ボンベ容積3.4L、残圧10MPa、
+        酸素流量2L/分の場合
+      </strong>
+
+      <p>
+        まず、残っている酸素量を求めます。
+      </p>
+
+      <p>
+        3.4L × 10MPa × 10
+        ＝ <strong>340L</strong>
+      </p>
+
+      <p>
+        つまり、計算上の残存酸素量は
+        <strong>340L</strong>です。
+      </p>
+
+      <p>
+        次に、この酸素を
+        酸素流量2L/分で使用すると、
+      </p>
+
+      <p>
+        340L ÷ 2L/分
+        ＝ <strong>170分</strong>
+      </p>
+
+      <p>
+        したがって、計算上の使用可能時間は
+        <strong>170分</strong>です。
+      </p>
+
+    </div>
+
+
+    <div class="point">
+
+      <strong>覚え方</strong>
+
+      <p>
+        「残っている酸素量」を
+        「1分間に使う酸素量」で割る、
+        と考えると分かりやすいです。
+      </p>
+
+      <div class="formula">
+        使用可能時間<br>
+        ＝ 残っている酸素量 ÷ 酸素流量
+      </div>
+
+    </div>
+
+
+    <div class="important">
+
+      <strong>実際の使用では余裕を持つ</strong>
+
+      <p>
+        計算上の使用可能時間いっぱいまで使用できる、
+        という意味ではありません。
+      </p>
+
+      <p>
+        患者搬送では搬送時間、検査時間、移動中の状況などを考慮し、
+        十分な酸素残量を確保する必要があります。
+      </p>
+
+    </div>
+
+
+    <!-- 電卓 -->
+
+    <div class="calculator">
+
+      <h3>計算してみよう</h3>
+
+      <div class="form-row">
+
+        <div>
+          <label for="cylinderVolume1">
+            ボンベ容積（L）
+          </label>
+
+          <input
+            id="cylinderVolume1"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="例：3.4"
+          >
+        </div>
+
+
+        <div>
+          <label for="pressure1">
+            残圧（MPa）
+          </label>
+
+          <input
+            id="pressure1"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="例：10"
+          >
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div>
+          <label for="flow1">
+            酸素流量（L/分）
+          </label>
+
+          <input
+            id="flow1"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="例：2"
+          >
+        </div>
+
+      </div>
+
+
+      <button onclick="calcTime()">
+        使用可能時間を計算
+      </button>
+
+
+      <div id="result1" class="result" hidden></div>
+
+    </div>
+
+
+    <a href="#menu" class="back">
+      ↑ 酸素ボンベ計算のメニューに戻る
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       ② 残っている酸素量
+  ====================================================== -->
+
+  <section class="card" id="amount">
+
+    <h2>
+      ② 酸素ボンベに残っている酸素量を求める
+    </h2>
+
+    <div class="point">
+      <strong>主な使用場面</strong><br>
+      → ボンベの残圧から、残っている酸素量を考えるときに使用します。
+    </div>
+
+
+    <h3>何を求めるの？</h3>
+
+    <p>
+      ボンベの容積と現在の圧力から、
+      <strong>残っている酸素量（L）</strong>
+      を求めます。
+    </p>
+
+
+    <h3>計算式</h3>
+
+    <div class="formula">
+      残存酸素量（L）<br>
+      ＝ ボンベ容積（L）× 残圧（MPa）× 10
+    </div>
+
+
+    <h3>例題</h3>
+
+    <div class="example">
+
+      <strong>
+        ボンベ容積3.4L、残圧10MPaの場合
+      </strong>
+
+      <p>
+        3.4L × 10MPa × 10
+      </p>
+
+      <p>
+        ＝ <strong>340L</strong>
+      </p>
+
+      <p>
+        計算上、約340Lの酸素が残っていると考えます。
+      </p>
+
+    </div>
+
+
+    <div class="important">
+
+      <strong>ボンベの規格を必ず確認</strong>
+
+      <p>
+        酸素ボンベにはさまざまな種類・容量があります。
+        「3.4L」という値はすべてのボンベに当てはまるものではありません。
+      </p>
+
+      <p>
+        実際には使用するボンベの仕様・表示を確認してください。
+      </p>
+
+    </div>
+
+
+    <a href="#menu" class="back">
+      ↑ 酸素ボンベ計算のメニューに戻る
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       ③ 足りるか確認
+  ====================================================== -->
+
+  <section class="card" id="check">
+
+    <h2>
+      ③ 必要な時間に対して酸素が足りるか確認する
+    </h2>
+
+    <div class="point">
+      <strong>主な使用場面</strong><br>
+      → 搬送・検査などに必要な時間と、ボンベの使用可能時間を比較するときに使用します。
+    </div>
+
+
+    <h3>何を考えるの？</h3>
+
+    <p>
+      例えば、
+      「検査に60分かかる」
+      「酸素流量は3L/分」
+      という場合、
+      現在のボンベで必要な時間をカバーできるかを考えます。
+    </p>
+
+
+    <h3>まず必要な酸素量を求める</h3>
+
+    <div class="formula">
+      必要酸素量（L）<br>
+      ＝ 酸素流量（L/分）× 必要時間（分）
+    </div>
+
+
+    <h3>例題</h3>
+
+    <div class="example">
+
+      <strong>
+        酸素流量3L/分で60分間使用する場合
+      </strong>
+
+      <p>
+        3L/分 × 60分
+        ＝ <strong>180L</strong>
+      </p>
+
+      <p>
+        つまり、少なくとも180Lの酸素が必要です。
+      </p>
+
+      <p>
+        ここに搬送時間などを加えて、
+        十分な残量があるかを確認します。
+      </p>
+
+    </div>
+
+
+    <div class="important">
+
+      <strong>「計算上足りる」と「安全に使用できる」は同じではありません</strong>
+
+      <p>
+        患者搬送などでは、予定より時間が延びる可能性もあります。
+        計算結果だけで判断せず、
+        施設の基準や搬送手順に従ってください。
+      </p>
+
+    </div>
+
+
+    <a href="#menu" class="back">
+      ↑ 酸素ボンベ計算のメニューに戻る
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       まとめ
+  ====================================================== -->
+
+  <section class="card">
+
+    <h2>酸素ボンベ計算のポイント</h2>
+
+
+    <div class="point">
+
+      <strong>① 使用可能時間</strong><br>
+
+      残っている酸素量 ÷ 酸素流量
+      → <strong>何分使えるか</strong>
+
+    </div>
+
+
+    <div class="point">
+
+      <strong>② 残存酸素量</strong><br>
+
+      ボンベ容積 × 残圧 × 10
+      → <strong>何L残っているか</strong>
+
+    </div>
+
+
+    <div class="point">
+
+      <strong>③ 必要酸素量</strong><br>
+
+      酸素流量 × 必要時間
+      → <strong>何L必要か</strong>
+
+    </div>
+
+
+    <div class="formula">
+      【覚えておきたい基本】
+
+      残存酸素量
+      ＝ ボンベ容積 × 残圧 × 10
+
+      使用可能時間
+      ＝ 残存酸素量 ÷ 酸素流量
+
+      必要酸素量
+      ＝ 酸素流量 × 必要時間
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       看護ツールへの自然な導線
+  ========================== -->
+
+  <section class="card tool-promotion">
+
+    <h2>
+      おすすめの看護ツールを使ってみる
+    </h2>
+
+    <p>
+      酸素ボンベ計算以外にも、
+      看護師・看護学生の勉強や業務に役立つ
+      便利なツールをまとめています。
+    </p>
+
+    <a
+      href="https://kita-tools.github.io/nurse-tools/"
+      class="tool-promotion-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      看護ツールを見る →
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       最終注意
+  ========================== -->
+
+  <div class="warning">
+
+    <strong>⚠ 実際の医療行為では必ず確認してください</strong>
+
+    <p>
+      このページの計算機は学習目的です。
+      実際の患者さんへの酸素投与や搬送などで使用する際は、
+      必ず医師の指示、使用する酸素ボンベ・流量調整器の仕様、
+      施設の手順などを確認してください。
+    </p>
+
+  </div>
+
+</main>
+
+
+<footer>
+  酸素ボンベ計算 学習用ページ
+</footer>
+
+
+<!-- =====================================================
+     右下：看護ツール紹介
+     共通JavaScriptで制御
+====================================================== -->
+
+<div
+  class="floating-tool"
+  id="floatingTool"
+  aria-label="看護師向けツールの紹介"
+>
+
+  <div class="floating-tool-header">
+
+    <div class="floating-tool-title">
+      👩‍⚕️ 看護師向けツール
+    </div>
+
+    <button
+      type="button"
+      class="floating-tool-close"
+      onclick="closeFloatingTool()"
+      aria-label="閉じる"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <p>
+    勉強や看護業務に使える
+    便利なツールをまとめています。
+  </p>
+
+
+  <a
+    href="https://kita-tools.github.io/nurse-tools/"
+    class="floating-tool-button"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    看護ツールを見る →
+  </a>
+
+</div>
+
+
+<!-- =====================================================
+     酸素ボンベ計算 JavaScript
+====================================================== -->
+
+<script>
+
+/* =========================================================
+   共通入力チェック
+========================================================= */
+
+function getPositiveNumber(id) {
+
+  const value =
+    Number(document.getElementById(id).value);
+
+  if (!Number.isFinite(value) || value <= 0) {
+    return null;
+  }
+
+  return value;
+}
+
+
+/* =========================================================
+   ① 使用可能時間
+========================================================= */
+
+function calcTime() {
+
+  const cylinderVolume =
+    getPositiveNumber("cylinderVolume1");
+
+  const pressure =
+    getPositiveNumber("pressure1");
+
+  const flow =
+    getPositiveNumber("flow1");
+
+  const result =
+    document.getElementById("result1");
+
+
+  if (
+    cylinderVolume === null ||
+    pressure === null ||
+    flow === null
+  ) {
+
+    result.hidden = false;
+
+    result.textContent =
+      "ボンベ容積・残圧・酸素流量を正しく入力してください。";
+
+    return;
+  }
+
+
+  // 残存酸素量
+  const oxygenAmount =
+    cylinderVolume * pressure * 10;
+
+
+  // 使用可能時間
+  const minutes =
+    oxygenAmount / flow;
+
+
+  const hours =
+    Math.floor(minutes / 60);
+
+
+  const remainingMinutes =
+    Math.round(minutes % 60);
+
+
+  result.hidden = false;
+
+
+  result.innerHTML = `
+    残存酸素量：
+    <strong>${oxygenAmount.toFixed(1)} L</strong>
+    <br>
+    使用可能時間：
+    <strong>${minutes.toFixed(1)} 分</strong>
+    <br>
+    約
+    <strong>${hours}時間${remainingMinutes}分</strong>
+  `;
+}
+
+</script>
+
+
+<!-- =====================================================
+     共通：看護ツール紹介ポップアップ
+====================================================== -->
+
+<script src="nursing-guide.js"></script>
+
+</body>
+</html>

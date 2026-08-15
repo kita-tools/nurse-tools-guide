@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>BMI計算解説</title>
+
+  <!-- 共通CSS -->
+  <link
+    rel="stylesheet"
+    href="nursing-guide.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <h1>
+    BMI計算をわかりやすく解説
+  </h1>
+
+  <p>
+    身長と体重からBMIを求めてみよう
+  </p>
+
+</header>
+
+
+<main>
+
+
+  <!-- =====================================================
+       注意事項
+  ====================================================== -->
+
+  <div class="warning">
+
+    <strong>⚠ 学習用ページ</strong><br>
+
+    このページはBMIの計算方法を学習するための教材です。
+    BMIは体格を評価する指標の一つであり、
+    BMIだけで健康状態を判断できるものではありません。
+
+  </div>
+
+
+  <!-- =====================================================
+       メニュー
+  ====================================================== -->
+
+  <section
+    class="card"
+    id="menu"
+  >
+
+    <h2>
+      BMI計算で求めるもの
+    </h2>
+
+    <p>
+      BMIは、身長と体重から体格を数値化する指標です。
+      まず「何を求めるのか」を確認しましょう。
+    </p>
+
+
+    <a
+      href="#bmi"
+      class="menu-item"
+    >
+
+      <div class="menu-title">
+        ① 身長と体重からBMIを求める
+      </div>
+
+      <div class="menu-use">
+        → 体格を評価する指標として使用
+      </div>
+
+      <div class="menu-link">
+        詳しい解説を見る →
+      </div>
+
+    </a>
+
+
+    <a
+      href="#judgment"
+      class="menu-item"
+    >
+
+      <div class="menu-title">
+        ② BMIの数値から体格を判定する
+      </div>
+
+      <div class="menu-use">
+        → BMIの値を基準と照らし合わせて確認
+      </div>
+
+      <div class="menu-link">
+        詳しい解説を見る →
+      </div>
+
+    </a>
+
+
+    <a
+      href="#reverse"
+      class="menu-item"
+    >
+
+      <div class="menu-title">
+        ③ BMIから標準体重を考える
+      </div>
+
+      <div class="menu-use">
+        → 身長からBMI 22に相当する体重を求める
+      </div>
+
+      <div class="menu-link">
+        詳しい解説を見る →
+      </div>
+
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       ① BMI
+  ====================================================== -->
+
+  <section
+    class="card"
+    id="bmi"
+  >
+
+    <h2>
+      ① 身長と体重からBMIを求める
+    </h2>
+
+    <div class="point">
+
+      <strong>主な使用場面</strong><br>
+
+      → 身長と体重から体格を評価する指標として使用します。
+
+    </div>
+
+
+    <h3>
+      何を求めるの？
+    </h3>
+
+    <p>
+      BMIは、
+      <strong>Body Mass Index（体格指数）</strong>
+      のことで、身長と体重から求めます。
+    </p>
+
+    <p>
+      BMIには単位はありません。
+    </p>
+
+
+    <h3>
+      計算式
+    </h3>
+
+    <div class="formula">
+
+      BMI ＝ 体重（kg）÷ 身長（m）÷ 身長（m）
+
+    </div>
+
+
+    <div class="important">
+
+      <strong>
+        身長の単位に注意！
+      </strong>
+
+      <p>
+        BMIを計算するときは、
+        <strong>身長を「m」に直してから</strong>
+        計算します。
+      </p>
+
+      <p>
+        160cm → 1.60m
+      </p>
+
+    </div>
+
+
+    <h3>
+      例題
+    </h3>
+
+    <div class="example">
+
+      <strong>
+        身長160cm、体重60kgの場合
+      </strong>
+
+      <p>
+        まず身長をmに変換します。
+      </p>
+
+      <p>
+        160cm ＝ <strong>1.60m</strong>
+      </p>
+
+      <p>
+        BMI
+        ＝ 60 ÷ 1.60 ÷ 1.60
+      </p>
+
+      <p>
+        ＝ <strong>23.4</strong>
+      </p>
+
+      <p>
+        この場合、BMIは
+        <strong>23.4</strong>です。
+      </p>
+
+    </div>
+
+
+    <div class="calculator">
+
+      <h3>
+        計算してみよう
+      </h3>
+
+
+      <div class="form-row">
+
+
+        <div>
+
+          <label for="height">
+            身長（cm）
+          </label>
+
+          <input
+            id="height"
+            type="number"
+            min="0"
+            step="0.1"
+            placeholder="例：160"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="weight">
+            体重（kg）
+          </label>
+
+          <input
+            id="weight"
+            type="number"
+            min="0"
+            step="0.1"
+            placeholder="例：60"
+          >
+
+        </div>
+
+
+      </div>
+
+
+      <button
+        onclick="calcBMI()"
+      >
+        BMIを計算
+      </button>
+
+
+      <div
+        id="bmiResult"
+        class="result"
+        hidden
+      ></div>
+
+    </div>
+
+
+    <a
+      href="#menu"
+      class="back"
+    >
+      ↑ BMI計算のメニューに戻る
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       ② 判定
+  ====================================================== -->
+
+  <section
+    class="card"
+    id="judgment"
+  >
+
+    <h2>
+      ② BMIの数値から体格を判定する
+    </h2>
+
+    <div class="point">
+
+      <strong>
+        主な使用場面
+      </strong><br>
+
+      → 求めたBMIを基準と照らし合わせ、
+      体格を確認するときに使用します。
+
+    </div>
+
+
+    <h3>
+      成人のBMIの目安
+    </h3>
+
+
+    <div class="example">
+
+      <p>
+        日本肥満学会では、成人についてBMI 25以上を
+        「肥満」としています。
+      </p>
+
+      <p>
+        一般的には以下のような区分が用いられます。
+      </p>
+
+
+      <table
+        style="
+          width:100%;
+          border-collapse:collapse;
+          margin-top:15px;
+        "
+      >
+
+        <tr>
+
+          <th
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+              background:#e3f2fd;
+            "
+          >
+            BMI
+          </th>
+
+          <th
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+              background:#e3f2fd;
+            "
+          >
+            判定
+          </th>
+
+        </tr>
+
+
+        <tr>
+
+          <td
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+            "
+          >
+            18.5未満
+          </td>
+
+          <td
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+            "
+          >
+            低体重（やせ）
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+            "
+          >
+            18.5以上25未満
+          </td>
+
+          <td
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+            "
+          >
+            普通体重
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+            "
+          >
+            25以上
+          </td>
+
+          <td
+            style="
+              border:1px solid #ddd;
+              padding:10px;
+            "
+          >
+            肥満
+          </td>
+
+        </tr>
+
+      </table>
+
+    </div>
+
+
+    <div class="important">
+
+      <strong>
+        注意
+      </strong>
+
+      <p>
+        BMIは体格を評価するための一つの指標です。
+        BMIだけで健康状態や疾病の有無を判断することはできません。
+      </p>
+
+      <p>
+        また、年齢や性別、筋肉量などによっても
+        体格の特徴は異なります。
+      </p>
+
+    </div>
+
+
+    <h3>
+      覚え方
+    </h3>
+
+    <div class="formula">
+
+      18.5未満 → 低体重<br>
+      18.5以上25未満 → 普通体重<br>
+      25以上 → 肥満
+
+    </div>
+
+
+    <a
+      href="#menu"
+      class="back"
+    >
+      ↑ BMI計算のメニューに戻る
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       ③ 標準体重
+  ====================================================== -->
+
+  <section
+    class="card"
+    id="reverse"
+  >
+
+    <h2>
+      ③ BMIから標準体重を考える
+    </h2>
+
+    <div class="point">
+
+      <strong>
+        主な使用場面
+      </strong><br>
+
+      → 身長からBMI 22に相当する体重を求めるときに使用します。
+
+    </div>
+
+
+    <h3>
+      何を求めるの？
+    </h3>
+
+    <p>
+      成人では、BMI 22を標準的な体重の目安として
+      使用することがあります。
+    </p>
+
+
+    <h3>
+      計算式
+    </h3>
+
+    <div class="formula">
+
+      標準体重（kg）
+      ＝ 身長（m）× 身長（m）× 22
+
+    </div>
+
+
+    <h3>
+      例題
+    </h3>
+
+    <div class="example">
+
+      <strong>
+        身長160cmの場合
+      </strong>
+
+      <p>
+        160cm ＝ 1.60m
+      </p>
+
+      <p>
+        1.60 × 1.60 × 22
+      </p>
+
+      <p>
+        ＝ <strong>56.32kg</strong>
+      </p>
+
+      <p>
+        BMI 22に相当する体重は、
+        約<strong>56.3kg</strong>です。
+      </p>
+
+    </div>
+
+
+    <div class="calculator">
+
+      <h3>
+        標準体重を計算してみよう
+      </h3>
+
+
+      <div class="form-row">
+
+        <div>
+
+          <label for="standardHeight">
+            身長（cm）
+          </label>
+
+          <input
+            id="standardHeight"
+            type="number"
+            min="0"
+            step="0.1"
+            placeholder="例：160"
+          >
+
+        </div>
+
+      </div>
+
+
+      <button
+        onclick="calcStandardWeight()"
+      >
+        標準体重を計算
+      </button>
+
+
+      <div
+        id="standardResult"
+        class="result"
+        hidden
+      ></div>
+
+    </div>
+
+
+    <a
+      href="#menu"
+      class="back"
+    >
+      ↑ BMI計算のメニューに戻る
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       まとめ
+  ====================================================== -->
+
+  <section class="card">
+
+    <h2>
+      BMI計算のポイント
+    </h2>
+
+
+    <div class="point">
+
+      <strong>
+        ① BMIを求める
+      </strong><br>
+
+      体重（kg）÷ 身長（m）÷ 身長（m）
+
+    </div>
+
+
+    <div class="point">
+
+      <strong>
+        ② BMIを判定する
+      </strong><br>
+
+      18.5未満 → 低体重<br>
+      18.5以上25未満 → 普通体重<br>
+      25以上 → 肥満
+
+    </div>
+
+
+    <div class="point">
+
+      <strong>
+        ③ BMI 22の標準体重を求める
+      </strong><br>
+
+      身長（m）× 身長（m）× 22
+
+    </div>
+
+
+    <div class="important">
+
+      <strong>
+        まず身長をmに直す！
+      </strong><br>
+
+      160cm → 1.60m
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       看護ツールへの自然な導線
+  ====================================================== -->
+
+  <section class="card tool-promotion">
+
+    <h2>
+      おすすめの看護ツールを使ってみる
+    </h2>
+
+    <p>
+      BMI計算以外にも、
+      看護師・看護学生の勉強や業務に役立つ
+      便利なツールをまとめています。
+    </p>
+
+    <a
+      href="https://kita-tools.github.io/nurse-tools/"
+      class="tool-promotion-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      看護ツールを見る →
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       最終注意
+  ====================================================== -->
+
+  <div class="warning">
+
+    <strong>
+      ⚠ 実際の医療行為では必ず確認してください
+    </strong>
+
+    <p>
+      このページの計算機は学習目的です。
+      実際の患者さんへの評価や判断を行う際は、
+      必ず医師の指示、施設の手順、
+      その他必要な情報などを確認してください。
+    </p>
+
+  </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     フッター
+====================================================== -->
+
+<footer>
+
+  BMI計算 学習用ページ
+
+</footer>
+
+
+<!-- =====================================================
+     右下：看護ツール紹介
+====================================================== -->
+
+<div
+  class="floating-tool"
+  id="floatingTool"
+  aria-label="看護師向けツールの紹介"
+>
+
+  <div class="floating-tool-header">
+
+    <div class="floating-tool-title">
+      👩‍⚕️ 看護師向けツール
+    </div>
+
+
+    <button
+      type="button"
+      class="floating-tool-close"
+      onclick="closeFloatingTool()"
+      aria-label="閉じる"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <p>
+    勉強や看護業務に使える
+    便利なツールをまとめています。
+  </p>
+
+
+  <a
+    href="https://kita-tools.github.io/nurse-tools/"
+    class="floating-tool-button"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    看護ツールを見る →
+  </a>
+
+</div>
+
+
+<!-- =====================================================
+     BMI計算 JavaScript
+====================================================== -->
+
+<script>
+
+/* =========================================================
+   BMI計算
+========================================================= */
+
+function calcBMI() {
+
+  const heightCm =
+    Number(
+      document.getElementById("height").value
+    );
+
+  const weight =
+    Number(
+      document.getElementById("weight").value
+    );
+
+  const result =
+    document.getElementById("bmiResult");
+
+
+  if (
+    !Number.isFinite(heightCm) ||
+    !Number.isFinite(weight) ||
+    heightCm <= 0 ||
+    weight <= 0
+  ) {
+
+    result.hidden = false;
+
+    result.textContent =
+      "身長と体重を正しく入力してください。";
+
+    return;
+  }
+
+
+  // cm → m
+
+  const heightM =
+    heightCm / 100;
+
+
+  const bmi =
+    weight / (heightM * heightM);
+
+
+  let judgment;
+
+
+  if (bmi < 18.5) {
+
+    judgment =
+      "低体重（やせ）";
+
+  } else if (bmi < 25) {
+
+    judgment =
+      "普通体重";
+
+  } else {
+
+    judgment =
+      "肥満";
+
+  }
+
+
+  result.hidden = false;
+
+  result.innerHTML = `
+    BMI：
+    <strong>${bmi.toFixed(1)}</strong>
+    <br>
+    判定：
+    <strong>${judgment}</strong>
+  `;
+
+}
+
+
+/* =========================================================
+   標準体重
+========================================================= */
+
+function calcStandardWeight() {
+
+  const heightCm =
+    Number(
+      document.getElementById("standardHeight").value
+    );
+
+
+  const result =
+    document.getElementById("standardResult");
+
+
+  if (
+    !Number.isFinite(heightCm) ||
+    heightCm <= 0
+  ) {
+
+    result.hidden = false;
+
+    result.textContent =
+      "身長を正しく入力してください。";
+
+    return;
+  }
+
+
+  // cm → m
+
+  const heightM =
+    heightCm / 100;
+
+
+  const standardWeight =
+    heightM * heightM * 22;
+
+
+  result.hidden = false;
+
+  result.innerHTML = `
+    BMI 22に相当する体重：
+    <strong>${standardWeight.toFixed(1)} kg</strong>
+  `;
+
+}
+
+</script>
+
+
+<!-- =====================================================
+     解説ページ共通 JavaScript
+====================================================== -->
+
+<script src="nursing-guide.js"></script>
+
+
+</body>
+
+</html>
