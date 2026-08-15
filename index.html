@@ -2,22 +2,46 @@
 <html lang="ja">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>ナースツールガイド</title>
 
-<link rel="stylesheet" href="css/nursing-guide.css">
+<link
+  rel="stylesheet"
+  href="css/nursing-guide.css"
+>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     ヘッダー
+========================== -->
+
 <header>
-  <h1>ナースツールガイド</h1>
-  <p>看護に役立つ計算や知識をわかりやすく解説</p>
+
+  <h1>
+    ナースツールガイド
+  </h1>
+
+  <p>
+    看護に役立つ計算や知識をわかりやすく解説
+  </p>
+
 </header>
 
+
 <main>
+
 
   <!-- =========================
        このページについて
@@ -25,7 +49,9 @@
 
   <section class="card">
 
-    <h2>このページについて</h2>
+    <h2>
+      このページについて
+    </h2>
 
     <p>
       看護師・看護学生向けの計算や、
@@ -40,47 +66,76 @@
   </section>
 
 
-   <!-- =========================
+  <!-- =========================
        解説コンテンツ
   ========================== -->
- <section class="card">
 
-  <h2>看護ツール解説</h2>
+  <section class="card">
 
-  <div>
-    <a href="点滴計算解説.html" class="guide-button">
-      ① 点滴計算
-    </a>
-  </div>
+    <h2>
+      看護ツール解説
+    </h2>
 
-  <div>
-    <a href="酸素ボンベ計算解説.html" class="guide-button">
-      ② 酸素ボンベ計算
-    </a>
-  </div>
 
-  <div>
-    <a href="BMI計算解説.html" class="guide-button">
-      ③ BMI計算
-    </a>
-  </div>
-</section>
+    <div>
+
+      <a
+        href="点滴計算解説.html"
+        class="guide-button"
+      >
+        ① 点滴計算
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <a
+        href="酸素ボンベ計算解説.html"
+        class="guide-button"
+      >
+        ② 酸素ボンベ計算
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <a
+        href="BMI計算解説.html"
+        class="guide-button"
+      >
+        ③ BMI計算
+      </a>
+
+    </div>
+
+  </section>
+
+
   <!-- =========================
        このページの目的
   ========================== -->
 
   <section class="card">
 
-    <h2>このページの目的</h2>
+    <h2>
+      このページの目的
+    </h2>
 
     <p>
       看護に関する計算や知識を学ぶ際の
       参考資料として、わかりやすく整理しています。
     </p>
 
+
     <div class="point">
 
-      <strong>こんなときに活用できます</strong>
+      <strong>
+        こんなときに活用できます
+      </strong>
 
       <p>
         ・計算方法を確認したい<br>
@@ -100,7 +155,9 @@
 
   <div class="warning">
 
-    <strong>⚠ ご利用にあたって</strong>
+    <strong>
+      ⚠ ご利用にあたって
+    </strong>
 
     <p>
       このサイトは、看護に関する計算や知識を
@@ -118,9 +175,75 @@
 </main>
 
 
+<!-- =========================
+     フッター
+========================== -->
+
 <footer>
-  <p>© Nurse Tools</p>
+
+  <p>
+    © Nurse Tools
+  </p>
+
 </footer>
 
+
+<!-- =========================
+     右下：看護ツール紹介
+========================== -->
+
+<div
+  class="floating-tool"
+  id="floatingTool"
+  aria-label="看護師向けツールの紹介"
+>
+
+
+  <div class="floating-tool-header">
+
+    <div class="floating-tool-title">
+      👩‍⚕️ 看護師向けツール
+    </div>
+
+
+    <button
+      type="button"
+      class="floating-tool-close"
+      onclick="closeFloatingTool()"
+      aria-label="閉じる"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <p>
+    勉強や看護業務に使える
+    便利なツールをまとめています。
+  </p>
+
+
+  <a
+    href="https://kita-tools.github.io/nurse-tools/"
+    class="floating-tool-button"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    看護ツールを見る →
+  </a>
+
+
+</div>
+
+
+<!-- =========================
+     共通JavaScript
+========================== -->
+
+<script src="js/nursing-guide.js"></script>
+
+
 </body>
+
 </html>
